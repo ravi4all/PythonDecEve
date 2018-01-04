@@ -11,7 +11,7 @@ def create():
     studentData['Age'] = studentAge
     studentData['Course'] = studentCourse
 
-    studentList.append(studentData)
+    studentList.append(studentData.copy())
 
     for student in studentList:
         print(id,student)
@@ -33,7 +33,10 @@ def search():
     pass
 
 def sort():
-    pass
+    sort_by = input("Sort by name or age ?")
+    studentList.sort(key=lambda x : x[sort_by.capitalize()])
+    print("Sorted List")
+    read()
 
 def save():
     pass

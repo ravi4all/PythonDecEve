@@ -7,6 +7,7 @@ def create():
     studentCourse = input("Enter student course : ")
 
     studentList.append([studentName, studentAge, studentCourse])
+    # studentList = [studentName, studentAge, studentCourse]
 
     for student in studentList:
         print(id,student)
@@ -19,16 +20,36 @@ def read():
         id += 1
 
 def update():
-    pass
+    student_id = int(input("Enter the ID of student you want to update : "))
+
+    print("You want to update :\n",studentList[student_id-1])
+
+    print("What do you want to update : Name or Age ?")
+    to_update = input(">> ")
+
+    if to_update.lower() == "name":
+        updatedName = input("Enter updated name : ")
+        studentList[student_id-1][0] = updatedName
+        print("Data Updated...")
+        read()
+    elif to_update.lower() == "age":
+        pass
+    else:
+        pass
 
 def delete():
-    pass
+    student_id = int(input("Enter the ID of student you want to update : "))
+    del studentList[student_id-1]
+    print("Updated List")
+    read()
 
 def search():
     pass
 
 def sort():
-    pass
+    studentList.sort()
+    print("Sorted List")
+    read()
 
 def save():
     pass
