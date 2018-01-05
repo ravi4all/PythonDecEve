@@ -13,6 +13,9 @@ screen = pygame.display.set_mode((900, 600))
 x = 0
 y = 0
 
+clock = pygame.time.Clock()
+FPS = 100
+
 while True:
 
     for event in pygame.event.get():
@@ -32,7 +35,10 @@ while True:
     screen.fill(red)
     pygame.draw.rect(screen, black, [x,y,50,50])
 
-    x += 10
-    y += 10
+    x += 5
+    y += 5
+
+    print(x,y)
     
     pygame.display.update()
+    clock.tick(FPS)
